@@ -26,7 +26,15 @@
     </nav>
   </div>
   <div class="container">
-    Hello!
+    <div class='row'>
+      <div class='large-12 columns'>
+        {{#if ready}}
+          Welcome to {{hackathonName}}
+        {{else}}
+          {{> spinner}}
+        {{/if}}
+      </div>
+    </div>
   </div>
   <div class='row'>
     <div class='small-12 columns' id='footer'>
