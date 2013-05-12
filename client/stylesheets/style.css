@@ -5,3 +5,30 @@
 .container {
   margin-top: 45px;
 }
+
+.top-bar-section ul li div>a {
+  display: block;
+  width: 100%;
+  color: #fff;
+  padding: 12px 0 12px 0;
+  padding-left: 15px;
+  font-size: 0.8125em;
+  font-weight: bold;
+}
+
+div>a#login-sign-in-link {
+  text-decoration: none;
+}
+
+div#login-dropdown-list a.login-close-text, div#login-dropdown-list a.additional-link {
+  padding: 0 0 0 0;
+  margin-bottom: 8px;
+  height: 30px;
+  background-color: white;
+  color: black;
+}
+
+div#login-password-label-and-input {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

@@ -8,3 +8,5 @@ preserve-inputs
 foundation
 coffeescript
 spin
+accounts-password
+accounts-ui
