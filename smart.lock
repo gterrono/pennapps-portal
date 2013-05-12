@@ -1,0 +1,19 @@
+{
+  "meteor": {
+    "git": "https://github.com/meteor/meteor.git",
+    "branch": "master",
+    "commit": "bfe4b72ebec4367eaddcdf0887fcf5e649d9dcb8"
+  },
+  "dependencies": {
+    "basePackages": {
+      "foundation": {}
+    },
+    "packages": {
+      "foundation": {
+        "git": "https://github.com/ewall/meteor-foundation.git",
+        "tag": "v4.1.6",
+        "commit": "0fb2a2c4c13822dfaadea0942c66dcc983dbd9a5"
+      }
+    }
+  }
+}
