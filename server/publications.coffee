@@ -1,3 +1,5 @@
 Meteor.publish('currentHackathon', ->
-  return Hackathons.find({current: true}, fields: {created: false})
+  Hackathons.find({current: true}, fields: {created: false})
 )
+
+Meteor.publish('notifications', -> Notifications.find())

@@ -15,4 +15,6 @@ if(Meteor.users.find().fetch().length is 0)
     profile:
       admin: true
       name: 'PennApps Exec'
+      unseen: {}
+      unseen_num: 0
   )

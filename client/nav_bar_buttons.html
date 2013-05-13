@@ -3,6 +3,7 @@
     <ul class='right'>
       {{#if currentUser}}
       <li><a href="{{projectListPath}}">Choose a Project</a></li>
+      <li class="dropdown">{{> notifications}}</li>
       {{/if}}
       <li>{{loginButtons}}</li>
     </ul>
