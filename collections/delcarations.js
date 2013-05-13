@@ -1,1 +1,3 @@
-Hackathons = new Meteor.Collection('hackathons')
+Hackathons = new Meteor.Collection('hackathons');
+
+Notifications = new Meteor.Collection('notifications');
