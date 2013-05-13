@@ -10,3 +10,4 @@ coffeescript
 spin
 accounts-password
 accounts-ui
+router

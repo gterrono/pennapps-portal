@@ -5,6 +5,7 @@
   },
   "packages": {
     "foundation": {},
-    "spin": {}
+    "spin": {},
+    "router": {}
   }
 }
