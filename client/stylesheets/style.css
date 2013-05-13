@@ -16,7 +16,7 @@
   font-weight: bold;
 }
 
-div>a#login-sign-in-link {
+div>a#login-sign-in-link, div>a#login-name-link {
   text-decoration: none;
 }
 
