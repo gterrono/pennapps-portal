@@ -7,3 +7,11 @@ if(Hackathons.find().count() is 0)
     created: now
     current: true
   )
+
+if(Meteor.users.find().fetch().length is 0)
+  Accounts.createUser(
+    name: 'PennApps Exec'
+    email: 'exec@pennapps.com'
+    password: 'iampennappsexec'
+    admin: true
+  )
