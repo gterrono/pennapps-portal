@@ -6,7 +6,7 @@
     {{/if}}
     <b class="caret">▾</b>
   </a>
-  <ul class="notification f-dropdown" id="notifications" data-dropdown-content>
+  <ul class="notification f-dropdown medium" id="notifications" data-dropdown-content>
     {{#if notificationCount}}
       {{#each notifications}}
         {{> notification}}
@@ -18,9 +18,7 @@
 </template>
 
 <template name="notification">
-  <li>
-    <a href="{{postPagePath postId}}">
-      <strong>{{commenterName}}</strong> commented on your post
-    </a>
+  <li class="notification-text">
+    {{notificationText}} at {{notificationTime}}
   </li>
 </template>

@@ -12,3 +12,11 @@ Template.notifications.events(
 
   'click #notifications': (e) -> e.stopPropagation()
 )
+
+
+Template.notification.helpers(
+  notificationText: -> this.text
+  notificationTime: ->
+    date = moment(this.created)
+    date.format('h:mm a')
+)

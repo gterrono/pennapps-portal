@@ -50,3 +50,7 @@ div#login-password-label-and-input {
   cursor: auto;
   background: white;
 }
+
+li.notification-text {
+  margin-bottom: 5px;
+}
