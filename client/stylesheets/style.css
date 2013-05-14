@@ -44,13 +44,24 @@ div#login-password-label-and-input {
 
 #notifications.dropdown-display {
   background: white;
+  padding: 0 0 0 0;
 }
 
 #notifications.dropdown-display>li:hover {
   cursor: auto;
-  background: white;
+  background: rgb(240, 240, 240);
 }
 
 li.notification-text {
-  margin-bottom: 5px;
+  padding: 10px 10px 10px 10px;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+}
+
+li.notification-text:last-child {
+  border-bottom: 0px solid #ccc;
+}
+
+li.notification-text.unseen {
+  background: rgb(230, 230, 230);
 }
