@@ -1,12 +1,12 @@
 <template name="notifications">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+  <a href="#" class="dropdown-toggle" data-dropdown="notifications" id="notifications-button">
     Notifications
     {{#if notificationCount}}
       <span class="badge badge-inverse">{{notificationCount}}</span>
     {{/if}}
-    <b class="caret"></b>
+    <b class="caret">▾</b>
   </a>
-  <ul class="notification dropdown">
+  <ul class="notification f-dropdown" id="notifications" data-dropdown-content>
     {{#if notificationCount}}
       {{#each notifications}}
         {{> notification}}

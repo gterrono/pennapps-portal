@@ -36,3 +36,17 @@ div#login-password-label-and-input {
 #footer {
   margin-top: 10px;
 }
+
+.dropdown-display {
+  top: auto;
+  background: white;
+}
+
+#notifications.dropdown-display {
+  background: white;
+}
+
+#notifications.dropdown-display>li:hover {
+  cursor: auto;
+  background: white;
+}
