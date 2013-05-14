@@ -1,0 +1,17 @@
+<template name="notificationForm">
+  {{#if isAdmin}}
+    <div id="newNotificationModal" class="reveal-modal small">
+      <h2>Make a New Notification</h2>
+      <form id="notificationForm">
+        <div class="row">
+          <label>Text</label>
+          <input type="text" name="text" />
+        </div>
+        <div class="row">
+          <input type="submit" class="button" />
+        </div>
+        <a class="close-reveal-modal">&#215;</a>
+      </form>
+    </div>
+  {{/if}}
+</template>

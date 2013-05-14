@@ -1,9 +1,12 @@
 <template name="navBarButtons">
   <section class='top-bar-section'>
     <ul class='right'>
+      {{#if isAdmin}}
+        <li><a href="#" id="new-notification-button">Add a New Notification</a></li>
+      {{/if}}
       {{#if currentUser}}
-      <li><a href="{{projectListPath}}">Choose a Project</a></li>
-      <li>{{> notifications}}</li>
+        <li><a href="{{projectListPath}}">Choose a Project</a></li>
+        <li>{{> notifications}}</li>
       {{/if}}
       <li>{{loginButtons}}</li>
     </ul>
