@@ -7,9 +7,11 @@
     <b class="caret">▾</b>
   </a>
   <ul class="notification f-dropdown medium" id="notifications" data-dropdown-content>
-    {{#each notifications}}
-      {{> notification}}
-    {{/each}}
+    <div class="dropdown-scroll">
+      {{#each notifications}}
+        {{> notification}}
+      {{/each}}
+    </div>
   </ul>
 </template>
 

@@ -47,6 +47,11 @@ div#login-password-label-and-input {
   padding: 0 0 0 0;
 }
 
+.dropdown-scroll {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
 #notifications.dropdown-display>li:hover {
   cursor: auto;
   background: rgb(240, 240, 240);
