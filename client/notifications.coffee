@@ -7,9 +7,10 @@ Template.notifications.helpers(
 Template.notifications.events(
   'click #notifications-button': (e) ->
     e.preventDefault()
-    e.stopPropagation()
-    $('#notifications').addClass('dropdown-display')
-    window.sawNotifications = true
+    unless window.sawNotifications
+      e.stopPropagation()
+      $('#notifications').addClass('dropdown-display')
+      window.sawNotifications = true
 
   'click #notifications': (e) -> e.stopPropagation()
 )
