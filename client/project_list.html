@@ -1,9 +1,13 @@
 <template name="projectList">
-  <div class="row">
-    <div class="large-12 columns">
-      First of your team to sign up? <span class="button" id="new-project-button">Create a New Project</span>
+  <h2>Projects for {{hackathonName}}</h2>
+  {{#if userHasNoProject}}
+    <div class="row">
+      <div class="large-12 columns">
+        First of your team to sign up?
+        <span class="button" id="new-project-button">Create a New Project</span>
+      </div>
     </div>
-  </div>
+  {{/if}}
   {{#if projects}}
     {{#each projects}}
       {{> project}}
@@ -11,36 +15,23 @@
   {{else}}
     No projects have been created yet.
   {{/if}}
-  <div id="newProjectModal" class="reveal-modal small">
-    <h2>Make a New Project</h2>
-    <form id="project-form">
-      <div class="row">
-        <label>Name</label>
-        <input type="text" name="name" id="project-name" />
-      </div>
-      <div class="row">
-        <label>Description</label>
-        <textarea name="description" id="project-description"></textarea>
-      </div>
-      <div class="row">
-        <input type="submit" class="button" id="submit-new-project" />
-      </div>
-      <a class="close-reveal-modal">&#215;</a>
-    </form>
-  </div>
+  {{> projectForm}}
 </template>
 
 <template name="project">
-  <div class="row">
-    <div class="large-6 columns">{{projectName}}</div>
-    <div class="large-6 columns">
+  <div class="row project-listing">
+    <div class="large-4 columns">{{projectName}}</div>
+    <div class="large-4 columns">
       {{#each contributors}}
-        {{> contributor}}
+        <div class="row">
+          {{self}}
+        </div>
       {{/each}}
-</template>
-
-<template name="contributor">
-  <div class="row">
-    {{email}}
+    </div>
+    <div class="large-4 columns">
+      {{#if userHasNoProject}}
+        <div class="button request-to-join">Request to Join</div>
+      {{/if}}
+    </div>
   </div>
 </template>

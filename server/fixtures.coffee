@@ -17,4 +17,5 @@ if(Meteor.users.find().fetch().length is 0)
       name: 'PennApps Exec'
       unseen: {}
       unseen_num: 0
+      projects: {}
   )

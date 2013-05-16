@@ -70,3 +70,8 @@ li.notification-text:last-child {
 li.notification-text.unseen {
   background: rgb(230, 230, 230);
 }
+
+div.row.project-listing {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}

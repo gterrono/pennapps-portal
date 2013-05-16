@@ -6,26 +6,18 @@ Template.projectList.events(
   'click #new-project-button': (e) ->
     e.preventDefault()
     $('#newProjectModal').foundation('reveal', 'open')
-
-  'submit #project-form': (e) ->
-    e.preventDefault()
-    name = $('#project-name').val()
-    description = $('#project-description').val()
-    Project.insert(name: name, description: description)
-    $('#newProjectModal').foundation('reveal', 'close')
-
-  'click .close-reveal-modal': (e) ->
-    e.preventDefault()
-    $('#newProjectModal').foundation('reveal', 'close')
-
-  'click': (e) -> e.stopPropagation()
 )
 
 Template.project.helpers(
   projectName: -> this.name
   contributors: -> this.contributors
+  userHasNoProject: ->
+    Meteor.user() and not Meteor.user().profile.projects[Hackathons.findOne()._id]
+  self: -> this
 )
 
-Template.contributor.helpers(
-  email: -> this
+Template.project.events(
+  'click .request-to-join': (e) ->
+    e.preventDefault()
+    Meteor.call('requestToJoin', this._id)
 )

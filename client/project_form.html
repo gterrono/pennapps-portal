@@ -1,0 +1,19 @@
+<template name="projectForm">
+  <div id="newProjectModal" class="reveal-modal small">
+    <h2>Make a New Project</h2>
+    <form id="project-form">
+      <div class="row">
+        <label>Name</label>
+        <input type="text" name="name" id="project-name" />
+      </div>
+      <div class="row">
+        <label>Description</label>
+        <textarea name="description" id="project-description"></textarea>
+      </div>
+      <div class="row">
+        <input type="submit" class="button" id="submit-new-project" />
+      </div>
+      <a class="close-reveal-modal">&#215;</a>
+    </form>
+  </div>
+</template>

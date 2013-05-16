@@ -12,6 +12,5 @@ Template.notificationForm.events(
     Meteor.call('notify', $('#notification-text').val())
     $('#newNotificationModal').foundation('reveal', 'close')
 
-
   'click': (e) -> e.stopPropagation()
 )

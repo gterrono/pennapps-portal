@@ -6,6 +6,7 @@ Accounts.onCreateUser((options, user) ->
     unseen[notification._id] = true
   user.profile.unseen = unseen
   user.profile.unseen_num = notifications.length
+  user.profile.projects = {}
   user
 )
 
