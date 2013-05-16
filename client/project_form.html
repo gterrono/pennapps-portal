@@ -1,19 +1,25 @@
 <template name="projectForm">
-  <div id="newProjectModal" class="reveal-modal small">
-    <h2>Make a New Project</h2>
-    <form id="project-form">
-      <div class="row">
-        <label>Name</label>
-        <input type="text" name="name" id="project-name" />
-      </div>
-      <div class="row">
-        <label>Description</label>
-        <textarea name="description" id="project-description"></textarea>
-      </div>
-      <div class="row">
-        <input type="submit" class="button" id="submit-new-project" />
-      </div>
-      <a class="close-reveal-modal">&#215;</a>
-    </form>
-  </div>
+  {{#with usersProject}}
+    <div id="projectModal" class="reveal-modal small">
+      <h2>{{#if edit}}Edit Your{{else}}Make a New{{/if}} Project</h2>
+      <form id="project-form">
+        <div class="row">
+          <label>Name</label>
+          <input type="text" name="name" id="project-name" value="{{name}}" />
+        </div>
+        <div class="row">
+          <label>Description</label>
+          <textarea name="description" id="project-description">{{description}}</textarea>
+        </div>
+        <div class="row">
+          <label>Location</label>
+          <input type="text" name="location" id="project-location" value="{{location}}" />
+        </div>
+        <div class="row">
+          <input type="submit" class="button" id="submit-new-project" />
+        </div>
+        <a class="close-reveal-modal">&#215;</a>
+      </form>
+    </div>
+  {{/with}}
 </template>

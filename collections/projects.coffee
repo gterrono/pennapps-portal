@@ -1,3 +1,10 @@
+Projects.allow(
+  update: (userId, doc, fieldNames, modifier) ->
+    user = Meteor.users.findOne(userId)
+    _.contains(doc.contributors, user.emails[0].address) and
+      _.without(fieldNames, 'name', 'description', 'location').length is 0
+)
+
 ensureLoggedIn = (user, message) ->
   unless user
     throw new Meteor.Error(401, "You must be logged in to #{message}")
@@ -12,7 +19,7 @@ addProjectForHackathon = (user, hackathon, project_id) ->
   Meteor.users.update(user, $set: update_dict)
 
 Meteor.methods(
-  createProject: (name, description) ->
+  createProject: (name, description, location) ->
     user = Meteor.user()
     ensureLoggedIn(user, "make a new project")
     unless name and description
@@ -20,7 +27,7 @@ Meteor.methods(
     hackathon = Hackathons.findOne(current: true)
     ensureNoProjectForHackathon(user, hackathon)
     project_id =
-      Projects.insert(name: name, description: description, hackathon: hackathon._id, contributors: [user.emails[0].address])
+      Projects.insert(name: name, description: description, hackathon: hackathon._id, contributors: [user.emails[0].address], location: location)
     addProjectForHackathon(user, hackathon, project_id)
 
   requestToJoin: (project_id) ->

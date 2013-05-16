@@ -6,6 +6,9 @@
         <li><a href="#" id="new-notification-button">Add a New Notification</a></li>
       {{/if}}
       {{#if currentUser}}
+        {{#if userHasProject}}
+          <li><a href="#" id="project-edit-button">Edit Your Project</a></li>
+        {{/if}}
         <li><a href="{{projectListPath}}">View Projects</a></li>
         <li>{{> notifications}}</li>
       {{/if}}

@@ -12,6 +12,6 @@ $( ->
       $('#notifications').removeClass('dropdown-display')
       Meteor.call('resetNotifications')
     $('#newNotificationModal').foundation('reveal', 'close')
-    $('#newProjectModal').foundation('reveal', 'close')
+    $('#projectModal').foundation('reveal', 'close')
   )
 )

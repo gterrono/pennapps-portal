@@ -5,7 +5,7 @@ Template.projectList.helpers(
 Template.projectList.events(
   'click #new-project-button': (e) ->
     e.preventDefault()
-    $('#newProjectModal').foundation('reveal', 'open')
+    $('#projectModal').foundation('reveal', 'open')
 )
 
 Template.project.helpers(
