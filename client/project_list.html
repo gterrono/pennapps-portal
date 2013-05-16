@@ -1,3 +1,46 @@
 <template name="projectList">
-  Here are some projects!
+  <div class="row">
+    <div class="large-12 columns">
+      First of your team to sign up? <span class="button" id="new-project-button">Create a New Project</span>
+    </div>
+  </div>
+  {{#if projects}}
+    {{#each projects}}
+      {{> project}}
+    {{/each}}
+  {{else}}
+    No projects have been created yet.
+  {{/if}}
+  <div id="newProjectModal" class="reveal-modal small">
+    <h2>Make a New Project</h2>
+    <form id="project-form">
+      <div class="row">
+        <label>Name</label>
+        <input type="text" name="name" id="project-name" />
+      </div>
+      <div class="row">
+        <label>Description</label>
+        <textarea name="description" id="project-description"></textarea>
+      </div>
+      <div class="row">
+        <input type="submit" class="button" id="submit-new-project" />
+      </div>
+      <a class="close-reveal-modal">&#215;</a>
+    </form>
+  </div>
+</template>
+
+<template name="project">
+  <div class="row">
+    <div class="large-6 columns">{{projectName}}</div>
+    <div class="large-6 columns">
+      {{#each contributors}}
+        {{> contributor}}
+      {{/each}}
+</template>
+
+<template name="contributor">
+  <div class="row">
+    {{email}}
+  </div>
 </template>
