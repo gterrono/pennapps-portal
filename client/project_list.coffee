@@ -1,5 +1,5 @@
 Template.projectList.helpers(
-  projects: -> Projects.find().fetch()
+  projects: -> Projects.find({}, sort: name: 1).fetch()
 )
 
 Template.projectList.events(
