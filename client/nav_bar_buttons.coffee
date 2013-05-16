@@ -6,4 +6,8 @@ Template.navBarButtons.events(
   'click #new-notification-button': (e) ->
     e.preventDefault()
     $('#newNotificationModal').foundation('reveal', 'open')
+
+  'click #hackathon-button': (e) ->
+    e.preventDefault()
+    $('#hackathonModal').foundation('reveal', 'open')
 )
