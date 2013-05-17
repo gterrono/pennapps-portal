@@ -80,7 +80,12 @@ select {
   margin-bottom: 7px;
 }
 
-input.submit {
+input.submit, form div.prize.row {
   margin-top: 7px;
   margin-bottom: 7px;
+}
+
+#hackathonModal {
+  max-height: 500px;
+  overflow-y: auto;
 }
