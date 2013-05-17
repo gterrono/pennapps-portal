@@ -1,18 +1,20 @@
 <template name="navBarButtons">
-  <section class='top-bar-section'>
-    <ul class='right'>
-      {{#if isAdmin}}
-        <li><a href="#" id="hackathon-button">Edit the Current Hackathon</a></li>
-        <li><a href="#" id="new-notification-button">Add a New Notification</a></li>
-      {{/if}}
-      {{#if currentUser}}
-        {{#if userHasProject}}
-          <li><a href="#" id="project-edit-button">Edit Your Project</a></li>
+  {{#if ready}}
+    <section class='top-bar-section'>
+      <ul class='right'>
+        {{#if isAdmin}}
+          <li><a href="#" id="hackathon-button">Edit the Current Hackathon</a></li>
+          <li><a href="#" id="new-notification-button">Add a New Notification</a></li>
         {{/if}}
-        <li><a href="{{projectListPath}}">View Projects</a></li>
-        <li>{{> notifications}}</li>
-      {{/if}}
-      <li>{{loginButtons}}</li>
-    </ul>
-  </section>
+        {{#if currentUser}}
+          {{#if userHasProject}}
+            <li><a href="#" id="project-edit-button">Edit Your Project</a></li>
+          {{/if}}
+          <li><a href="{{projectListPath}}">View Projects</a></li>
+          <li>{{> notifications}}</li>
+        {{/if}}
+        <li>{{loginButtons}}</li>
+      </ul>
+    </section>
+  {{/if}}
 </template>

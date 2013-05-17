@@ -2,7 +2,11 @@ Template.projectForm.helpers(
   name: -> this.name
   description: -> this.description
   location: -> this.location
-  seatingOptions: -> Hackathons.findOne().seatingOptions
+  seatingOptions: ->
+    options = Hackathons.findOne().seatingOptions
+    if this.location
+      _.without(options, this.location)
+    else options
   edit: -> this._id
   usersProject: ->
     user = Meteor.user()

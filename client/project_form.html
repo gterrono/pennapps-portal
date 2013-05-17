@@ -13,10 +13,17 @@
         </div>
         <div class="row">
           <label>Location</label>
-          <input type="text" name="location" id="project-location" value="{{location}}" />
+          <select id="project-location">
+            {{#if location}}
+              <option value="{{location}}" selected="selected">{{location}}</option>
+            {{/if}}
+            {{#each seatingOptions}}
+              <option value="{{this}}">{{this}}</option>
+            {{/each}}
+          </select>
         </div>
         <div class="row">
-          <input type="submit" class="button" id="submit-new-project" />
+          <input type="submit" class="button submit" id="submit-new-project" />
         </div>
         <a class="close-reveal-modal">&#215;</a>
       </form>

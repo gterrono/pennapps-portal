@@ -75,3 +75,12 @@ div.row.project-listing {
   padding-top: 7px;
   padding-bottom: 7px;
 }
+
+select {
+  margin-bottom: 7px;
+}
+
+input.submit {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
