@@ -1,0 +1,12 @@
+<template name="prizes">
+  <h2>Prizes for {{hackathonName}}</h2>
+  {{#each prizes}}
+    <div class="row prize-listing">
+      <div class="large-4 columns">{{name}}</div>
+      <div class="large-6 columns">{{description}}</div>
+      <div class="large-2 columns">
+        <div class="button prize-sign-up">Sign Up</div>
+      </div>
+    </div>
+  {{/each}}
+</template>
