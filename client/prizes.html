@@ -2,11 +2,15 @@
   <h2>Prizes for {{hackathonName}}</h2>
   {{#each prizes}}
     <div class="row prize-listing">
-      <div class="large-4 columns">{{name}}</div>
+      <div class="large-4 columns prize-name">{{name}}</div>
       <div class="large-6 columns">{{description}}</div>
-      <div class="large-2 columns">
-        <div class="button prize-sign-up">Sign Up</div>
-      </div>
+        <div class="large-2 columns">
+          {{#if userNotSignedUp}}
+            <div class="button prize-sign-up">Sign Up</div>
+          {{else}}
+            <div class="button disabled">Signed Up</div>
+          {{/if}}
+        </div>
     </div>
   {{/each}}
 </template>
