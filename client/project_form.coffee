@@ -11,8 +11,8 @@ Template.projectForm.helpers(
   usersProject: ->
     user = Meteor.user()
     hackathonId = Hackathons.findOne()._id
-    currentProject = user.profile.projects[hackathonId]
-    if user and currentProject
+    currentProject = user.profile.projects[hackathonId] if user
+    if currentProject
       Projects.findOne(currentProject)
     else
       {}
