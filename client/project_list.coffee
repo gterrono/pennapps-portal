@@ -1,5 +1,7 @@
 Template.projectList.helpers(
   projects: -> Projects.find({}, sort: name: 1).fetch()
+  userHasNoProject: ->
+    Meteor.user() and not Meteor.user().profile.projects[Hackathons.findOne()._id]
 )
 
 Template.projectList.events(
