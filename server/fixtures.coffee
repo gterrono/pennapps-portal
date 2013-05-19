@@ -18,4 +18,5 @@ if(Meteor.users.find().fetch().length is 0)
       unseen: {}
       unseen_num: 0
       projects: {}
+      prizes: {}
   )
