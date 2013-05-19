@@ -12,7 +12,6 @@ Template.prizes.helpers(
 Template.prizes.events(
   'click .prize-sign-up': (e) ->
     nameTag = $($(e.toElement).parent().get(0)).siblings()[0]
-    console.log nameTag
     name = $(nameTag).text()
     hackathon = Hackathons.findOne()
     key = "profile.prizes.#{hackathon._id}"

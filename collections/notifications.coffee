@@ -9,7 +9,5 @@ Meteor.methods(
       unseen_num = user.profile.unseen_num
       unseen[id] = true
       unseen_num += 1
-      console.log unseen
       Meteor.users.update(user, {$set: {"profile.unseen": unseen, "profile.unseen_num": unseen_num}})
-      console.log Meteor.users.findOne({_id: user._id}).profile
 )
