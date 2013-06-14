@@ -10,8 +10,3 @@ Accounts.onCreateUser((options, user) ->
   user.profile.prizes = {}
   user
 )
-
-Meteor.methods(
-  resetNotifications: ->
-    Meteor.users.update(this.userId, {$set: {"profile.unseen": {}, "profile.unseen_num": 0}})
-)
