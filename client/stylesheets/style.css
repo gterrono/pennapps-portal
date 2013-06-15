@@ -89,3 +89,11 @@ input.submit, form div.prize.row {
   max-height: 500px;
   overflow-y: auto;
 }
+
+.show-line-breaks {
+  white-space: pre-line;
+}
+
+.row.mentor-description {
+  margin-top: 10px;
+}

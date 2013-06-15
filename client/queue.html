@@ -1,0 +1,27 @@
+<template name="mentorQueue">
+  <h2>Here is your queue</h2>
+  {{#each queue}}
+    {{> queueItem}}
+  {{/each}}
+</template>
+
+<template name="queueItem">
+  {{#with hacker}}
+    <div class="row project-listing">
+      <div class="large-8 columns">
+        <div class="row">
+          <div class="large-4 columns">
+            {{hackerName}}
+          </div>
+          <div class="large-4 columns left">
+            {{hackerLocation}}
+          </div>
+        </div>
+      </div>
+      
+        <div class="large-4 columns">
+          <div class="row button dequeue">Dequeue!</div>
+        </div>
+    </div>
+  {{/with}}
+</template>

@@ -1,0 +1,30 @@
+<template name="mentorList">
+  <h2>Mentors for {{hackathonName}}</h2>
+  {{#each mentors}}
+    {{> mentor}}
+  {{/each}}
+</template>
+
+<template name="mentor">
+  <div class="row project-listing">
+    <div class="large-8 columns">
+      <div class="row">
+        <div class="large-4 columns">
+          {{mentorName}}
+        </div>
+        <div class="large-4 columns left">
+          {{queueLength}} people in the queue
+        </div>
+      </div>
+      <div class="row mentor-description">
+      </div>
+      <div class="row mentor-description">
+        <div class="show-line-breaks">{{mentorDescription}}</div>
+      </div>
+    </div>
+    
+      <div class="large-4 columns">
+        <div class="row button join-queue {{#if inQueue}}disabled{{/if}}">Join the queue</div>
+      </div>
+  </div>
+</template>

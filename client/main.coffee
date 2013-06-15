@@ -1,8 +1,12 @@
-Meteor.subscribe 'currentHackathon'
-
 Meteor.subscribe 'notifications'
 
 Meteor.subscribe 'projects'
+
+Meteor.subscribe 'mentors'
+
+Meteor.subscribe 'queue'
+
+Meteor.subscribe 'currentHackathon'
 
 $( ->
   window.sawNotifications = false
