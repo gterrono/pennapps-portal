@@ -26,4 +26,24 @@ Meteor.methods(
             prizes: {}
             queue: []
         Accounts.sendEnrollmentEmail Meteor.users.findOne('emails.address': email)._id
+
+  joinQueue: (id) ->
+    now = new Date().getTime()
+    Meteor.users.update id,
+      $push:
+        'profile.queue': [Meteor.user()._id, now]
+    mentor = Meteor.users.findOne _id: id
+    unseen = _.clone mentor.profile.unseen
+    unseen_num = Meteor.user().profile.unseen_num
+    unseen[id] = true
+    unseen_num += 1
+    Meteor.users.update id,
+      $set:
+        "profile.unseen": unseen
+        "profile.unseen_num": unseen_num
+    Notifications.insert
+      created: new Date().getTime()
+      text: "#{Meteor.user().emails[0].address} joined your queue"
+      action: "/queue"
+      for: [id]
 )

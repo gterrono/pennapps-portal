@@ -1,5 +1,7 @@
 Meteor.subscribe 'notifications'
 
+Meteor.subscribe 'myNotifications'
+
 Meteor.subscribe 'projects'
 
 Meteor.subscribe 'mentors'

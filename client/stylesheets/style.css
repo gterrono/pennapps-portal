@@ -57,17 +57,20 @@ div#login-password-label-and-input {
   background: rgb(240, 240, 240);
 }
 
-li.notification-text {
+li.notification-text, a.notification-text {
   padding: 10px 10px 10px 10px;
   border-bottom: 1px solid #ccc;
   width: 100%;
+  font-size: 0.875em;
+  font-family: inherit;
+  color: #222;
 }
 
-li.notification-text:last-child {
+li.notification-text:last-child, a.notification-text:last-child {
   border-bottom: 0px solid #ccc;
 }
 
-li.notification-text.unseen {
+li.notification-text.unseen, a.notification-text.unseen {
   background: rgb(230, 230, 230);
 }
 

@@ -16,7 +16,13 @@
 </template>
 
 <template name="notification">
-<li class="notification-text {{unseenClass}}">
-    {{notificationText}} at {{notificationTime}}
-  </li>
+  {{#if action}}
+    <a class="notification-text" href="{{action}}">
+  {{/if}}
+    <li class="notification-text {{unseenClass}}">
+      {{notificationText}} at {{notificationTime}}
+    </li>
+  {{#if action}}
+    </a>
+  {{/if}}
 </template>
