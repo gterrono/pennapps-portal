@@ -6,6 +6,7 @@
   "packages": {
     "foundation": {},
     "spin": {},
-    "router": {}
+    "router": {},
+    "accounts-ui-bootstrap-dropdown": {}
   }
 }

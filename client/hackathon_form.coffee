@@ -25,8 +25,6 @@ Template.hackathonForm.events(
   'click #add-prize': (e) ->
     e.preventDefault()
     $('#prizes').append(Meteor.render(Template.prizeFields))
-
-  'click': (e) -> e.stopPropagation()
 )
 
 Template.prizeFields.helpers(

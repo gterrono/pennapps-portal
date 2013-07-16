@@ -33,6 +33,4 @@ Template.projectForm.events(
   'click .close-reveal-modal': (e) ->
     e.preventDefault()
     $('#projectModal').foundation('reveal', 'close')
-
-  'click': (e) -> e.stopPropagation()
 )

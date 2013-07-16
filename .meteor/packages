@@ -4,9 +4,9 @@
 # but you can also edit it by hand.
 
 preserve-inputs
-foundation
 coffeescript
 spin
 accounts-password
-accounts-ui
 router
+bootstrap
+accounts-ui-bootstrap-dropdown

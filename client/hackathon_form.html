@@ -1,9 +1,15 @@
 <template name="hackathonForm">
-  {{#if isAdmin}}
-    {{#with hackathon}}
-      <div id="hackathonModal" class="reveal-modal small">
-        <h2>Make a New Notification</h2>
-        <form id="hackathon-form">
+{{#if isAdmin}}
+{{#with hackathon}}
+<div id="hackathonModal" class="modal hide fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#215;</button>
+        <h4>Make a New Notification</h4>
+      </div>
+      <form id="hackathon-form">
+        <div class="modal-body">
           <div class="row">
             <label>Name</label>
             <input type="text" name="name" id="hackathon-name" value="{{name}}" />
@@ -15,31 +21,35 @@
           <div class="row" id="prizes">
             <label>Prizes</label>
             {{#each prizes}}
-              {{> prizeFields}}
+            {{> prizeFields}}
             {{/each}}
           </div>
           <div class="row">
             <div class="button" id="add-prize">Add Prize</div>
           </div>
+        </div>
+        <div class="modal-footer">
           <div class="row">
             <input type="submit" class="button" id="submit-hackathon" />
           </div>
-          <a class="close-reveal-modal">&#215;</a>
-        </form>
-      </div>
-    {{/with}}
-  {{/if}}
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{{/with}}
+{{/if}}
 </template>
 
 <template name="prizeFields">
-  <div class="row prize">
-    <div class="large-4 columns">
-      <label>Name</label>
-      <input type="text" class="prize-name" value="{{name}}" />
-    </div>
-    <div class="large-8 columns">
-      <label>Description</label>
-      <textarea class="prize-description">{{description}}</textarea>
-    </div>
+<div class="row prize">
+  <div class="large-4 columns">
+    <label>Name</label>
+    <input type="text" class="prize-name" value="{{name}}" />
   </div>
+  <div class="large-8 columns">
+    <label>Description</label>
+    <textarea class="prize-description">{{description}}</textarea>
+  </div>
+</div>
 </template>

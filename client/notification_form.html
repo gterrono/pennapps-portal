@@ -1,17 +1,27 @@
 <template name="notificationForm">
-  {{#if isAdmin}}
-    <div id="newNotificationModal" class="reveal-modal small">
-      <h2>Make a New Notification</h2>
+{{#if isAdmin}}
+<div id="newNotificationModal" class="modal hide fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#215;</button>
+        <h4>Make a New Notification</h4>
+      </div>
       <form id="notification-form">
-        <div class="row">
-          <label>Text</label>
-          <input type="text" name="text" id="notification-text" />
+        <div class="modal-body">
+          <div class="row">
+            <label>Text</label>
+            <input type="text" name="text" id="notification-text" />
+          </div>
         </div>
-        <div class="row">
-          <input type="submit" class="button" id="submit-new-notification" />
+        <div class="modal-footer">
+          <div class="row">
+            <input type="submit" class="btn" id="submit-new-notification" />
+          </div>
         </div>
-        <a class="close-reveal-modal">&#215;</a>
       </form>
     </div>
-  {{/if}}
+  </div>
+</div>
+{{/if}}
 </template>

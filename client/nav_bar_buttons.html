@@ -1,14 +1,14 @@
 <template name="navBarButtons">
   {{#if ready}}
-    <section class='top-bar-section'>
-      <ul class='right'>
+    <div class='top-bar-section pull-right'>
+      <ul class='nav navbar-nav right'>
         {{#if isAdmin}}
-          <li><a href="#" id="hackathon-button">Edit the Current Hackathon</a></li>
-          <li><a href="#" id="new-notification-button">Add a New Notification</a></li>
+              <li><a href="#hackathonModal" role="button" data-toggle="modal" id="hackathon-button">Edit the Current Hackathon</a></li>
+              <li><a href="#newNotificationModal" role="button" data-toggle="modal" id="new-notification-button">Add a New Notification</a></li>
         {{else}}
           {{#if currentUser}}
             {{#if userHasProject}}
-              <li><a href="#" id="project-edit-button">Edit Your Project</a></li>
+              <li><a href="#projectModal" role="button" data-toggle="modal" id="project-edit-button">Edit Your Project</a></li>
               <li><a href="{{prizesPath}}" id="prizes-button">Sign up for Prizes</a></li>
             {{/if}}
             <li><a href="{{projectListPath}}">View Projects</a></li>
@@ -17,6 +17,6 @@
         {{/if}}
         <li>{{loginButtons}}</li>
       </ul>
-    </section>
+    </div>
   {{/if}}
 </template>
