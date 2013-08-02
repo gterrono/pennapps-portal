@@ -1,6 +1,17 @@
 PennApps Portal
 =============
 
+General Overview of Code
+------------------------
+* All collections are in `collections/`
+* Server only code such as publications goes in `server/`
+* Client only code goes in `client/`
+  * External library code goes in `client/js/`
+  * Client code that doesn't relate to a specific view like the router goes in `client/helpers/`
+  * CSS goes in `client/css/`
+  * Template code goes directly in `client`
+* Images and other static files are in `public/`
+
 Setup
 -----
 * Install Meteor `curl https://install.meteor.com | sh`
