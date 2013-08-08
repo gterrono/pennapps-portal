@@ -13,7 +13,7 @@ Meteor.publish('projects', -> Projects.find())
 Meteor.publish('queue', ->
   user = Meteor.users.findOne _id: this.userId
 
-  if user.profile.queue
+  if user?.profile?.queue
     users = (el[0] for el in user.profile.queue)
     Meteor.users.find(_id: $in: users)
 )
