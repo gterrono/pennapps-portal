@@ -1,12 +1,10 @@
 Meteor.methods(
   addEvent: (name, timestamp, location, description, willNotify = false) ->
-    console.log 'adding'
     if not (Meteor.user() and Meteor.user().profile.admin)
       throw new Meteor.Error(403, "You do not have permission to add schedule events.")
-    time = moment(timestamp).format('ddd, M/D @ h:mA').replace('@', 'at')
-    id = Schedule.insert(name: name, time: time, location: location, description: description)
-    console.log id
-    notif_text = "EVENT ADDED: #{name} is scheduled for #{time}, and will take place at #{location}. Be there, or be square!"
+    id = Schedule.insert(name: name, time: timestamp, location: location, description: description)
+    humanReadabletime = moment.unix(timestamp).format('ddd, M/D @ h:mA').replace('@', 'at')
+    notif_text = "EVENT ADDED: #{name} is scheduled for #{humanReadabletime}, and will take place at #{location}. Be there, or be square!"
     if willNotify
       Meteor.call('notify', notif_text)
     return id

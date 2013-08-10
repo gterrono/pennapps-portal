@@ -10,6 +10,8 @@ Meteor.subscribe 'queue'
 
 Meteor.subscribe 'currentHackathon'
 
+Meteor.subscribe 'schedule'
+
 $( ->
   window.sawNotifications = false
   $('body').click((e) ->

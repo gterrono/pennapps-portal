@@ -17,3 +17,5 @@ Meteor.publish('queue', ->
     users = (el[0] for el in user.profile.queue)
     Meteor.users.find(_id: $in: users)
 )
+
+Meteor.publish('schedule', -> Schedule.find())

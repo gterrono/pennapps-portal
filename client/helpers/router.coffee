@@ -4,6 +4,7 @@ Meteor.Router.add(
   '/projects': 'projectList'
   '/prizes': 'prizes'
   '/queue': 'mentorQueue'
+  '/schedule': 'schedule'
   '*': '404'
 )
 
