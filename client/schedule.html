@@ -1,6 +1,9 @@
 <template name="schedule">
 	<!-- obviously not the finalized HTML scaffolding -->
 	<h1>Schedule</h1>
+	{{#if userIsAdmin}}
+		{{> newEvent }}
+	{{/if}}
 	<div class="schedule">
 		{{#each eventList }}
 			{{> event }}
@@ -21,6 +24,28 @@
 		</div>
 		<div class="small-12 columns">
 			<div class="description">{{ description }}</div>
+		</div>
+	</div>
+	<hr>
+</template>
+
+<template name="newEvent">
+	<div class="row">
+		<div class="small-6 columns">
+			<input type="text" class="name" placeholder="name">
+		</div>
+		<div class="small-12 large-offset-2 large-4 columns">
+			<input type="text" name='time' class="time" placeholder="time">
+		</div>
+		<div class="small-12 columns">
+			<input type="text" class="location" placeholder="location">
+		</div>
+		<div class="small-12 columns">
+			<textarea type="text" class="description" placeholder="description"></textarea>
+		</div>
+		<div class="small-12 columns">
+			<br>
+			<button class="right button submit">submit</button>
 		</div>
 	</div>
 	<hr>
