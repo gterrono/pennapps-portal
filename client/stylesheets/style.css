@@ -120,6 +120,15 @@ textarea {
   color: #aaa;
 }
 
+.change.button{
+  margin-left: 1em;
+}
+
+.chkbox{
+  margin-top: 10px;
+  font-size: 1.15em;
+}
+
 
 
 
