@@ -110,6 +110,16 @@ textarea {
     height: 6em;
 }
 
+.delete-x{
+  position: relative;
+  float:right;
+  font-size: 1.375em;
+  font-weight: bold;
+  margin-top: -.75em;
+  margin-right: 1em;
+  color: #aaa;
+}
+
 
 
 

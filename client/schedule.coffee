@@ -42,7 +42,7 @@ Template.editableEvent.events
 		willNotify = true
 		if userSure
 			Meteor.call('removeEvent', @_id, willNotify)
-		webkitNotify('Removal Successful!', "#{@_id} removed successfully!")
+			webkitNotify('Removal Successful!', "#{@_id} removed successfully!")
 
 
 		
