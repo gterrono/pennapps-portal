@@ -15,6 +15,9 @@ Meteor.methods(
     humanReadabletime = moment.unix(time).format('ddd, M/D/YY @ h:mA').replace('@', 'at')
     Schedule.remove({_id: _id})
     notif_text = "EVENT CANCELLED: #{name} has been cancelled. DO NOT go to #{location} at #{humanReadabletime}."
+    if notify
+      Meteor.call('notify', notif_text)
+
   updateEvent: (_id, name, timestamp, location, description, notify = false) ->
     if not (Meteor.user() and Meteor.user().profile.admin)
       throw new Meteor.Error(403, "You do not have permission to update schedule events.")

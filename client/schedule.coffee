@@ -19,7 +19,7 @@ Template.newEvent.events
 		timestamp = moment($(template.find '.time').val(), 'M/D/YYYY HH:mm').unix()
 		location = $(template.find '.location').val()
 		description = $(template.find '.description').val()
-		willNotify = true
+		willNotify = (template.find '.willNotify').checked
 		Meteor.call('addEvent', name, timestamp, location, description, willNotify)
 		#clear everything
 		$(template.find '.name').val('')
@@ -33,7 +33,7 @@ Template.editableEvent.events
 		timestamp = moment($(template.find '.time').text().replace('at', '@'), 'ddd, M/D/YY @ h:mmA').unix()
 		location = $(template.find '.location').text()
 		description = $(template.find '.description').text()
-		willNotify = true
+		willNotify = (template.find '.willNotify').checked
 		Meteor.call('updateEvent', @_id, name, timestamp, location, description, willNotify)
 		webkitNotify('Update Successful!', "#{@_id} updated successfully!")
 

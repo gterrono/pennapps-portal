@@ -120,7 +120,7 @@ textarea {
   color: #aaa;
 }
 
-.change.button{
+.change.button, .submit.button{
   margin-left: 1em;
 }
 

@@ -52,7 +52,7 @@
 	<br>
 	<button class="change button right">Change</button>
 	<label for="checkbox_{{_id}}" class="right chkbox">
-	    <input type="checkbox" id="checkbox_{{_id}}" style="display: none;">
+	    <input class="willNotify" type="checkbox" id="checkbox_{{_id}}" style="display: none;">
 	    <span class="custom checkbox"></span> Notify everyone?
 	</label>
 	<hr>
@@ -60,23 +60,29 @@
 </template>
 
 <template name="newEvent">
-	<div class="row">
-		<div class="small-6 columns">
-			<input type="text" class="name" placeholder="name">
+	<form class="custom">
+		<div class="row">
+			<div class="small-6 columns">
+				<input type="text" class="name" placeholder="name">
+			</div>
+			<div class="small-12 large-offset-2 large-4 columns">
+				<input type="text" name='time' class="time" placeholder="time">
+			</div>
+			<div class="small-12 columns">
+				<input type="text" class="location" placeholder="location">
+			</div>
+			<div class="small-12 columns">
+				<textarea type="text" class="description" placeholder="description"></textarea>
+			</div>
+			<div class="small-12 columns">
+				<br>
+				<button class="right button submit">submit</button>
+				<label for="checkbox_{{_id}}" class="right chkbox">
+		  		    <input class="willNotify" type="checkbox" id="checkbox_{{_id}}" style="display: none;">
+		    	    <span class="custom checkbox"></span> Notify everyone?
+				</label>
+			</div>
 		</div>
-		<div class="small-12 large-offset-2 large-4 columns">
-			<input type="text" name='time' class="time" placeholder="time">
-		</div>
-		<div class="small-12 columns">
-			<input type="text" class="location" placeholder="location">
-		</div>
-		<div class="small-12 columns">
-			<textarea type="text" class="description" placeholder="description"></textarea>
-		</div>
-		<div class="small-12 columns">
-			<br>
-			<button class="right button submit">submit</button>
-		</div>
-	</div>
-	<hr>
+		<hr>
+	</form>
 </template>
