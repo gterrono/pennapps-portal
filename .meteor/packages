@@ -7,8 +7,9 @@ standard-app-packages
 preserve-inputs
 spin
 router
-accounts-ui-bootstrap-dropdown
 coffeescript
-accounts-password
 handlebars
 zurb-foundation
+accounts-password
+accounts-ui
+momentjs

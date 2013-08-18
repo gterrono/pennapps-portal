@@ -5,10 +5,11 @@ Meteor.methods(
 		questionId = Questions.insert asker: Meteor.user()._id, question: text, answer: undefined, createdAt: moment().unix() 
 		admins = Meteor.users.find({'profile.admin': true}).fetch()
 		for admin in admins
+			console.log 'foo'
 			unanswered_questions = _.clone(admin.profile.unanswered_questions)
 			unanswered_questions.push questionId
 			Meteor.users.update({_id: admin._id}, {$set: {"profile.unanswered_questions": unanswered_questions}})
-		questionId
+		console?.log questionId
 	updateQuestion: (questionId, text) -> 
 		question = Questions.findOne({_id: questionid})
 		if question.asker isnt Meteor.userId()
