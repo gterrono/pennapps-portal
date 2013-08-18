@@ -49,20 +49,22 @@ Deps.autorun( ->
 
 #Unanswered question notifications go here
 Deps.autorun( ->
-  unanswered_questions = Meteor.user()?.profile.unanswered_questions || []
-  unanswered_length = unanswered_questions.length
-  if unanswered_questions.length > 0
-    document.getElementById('notification').play()
+  unansweredCount = if Meteor.user() then Meteor.user().profile.unanswered_num else 0
+  console.log Meteor.user()?.profile?.unanswered_questions
+  if unansweredCount and Meteor.user().profile.admin
+    document.getElementById('notification')?.play()
     if window.webkitNotifications.checkPermission() is 0
-      notification = window.webkitNotifications.createNotification(
-            '/icon.png', 'New Question', Questions.findOne({}, sort: createdAt: -1).question
+      Deps.nonreactive(->
+        notification = window.webkitNotifications.createNotification(
+          '/icon.png', 'Latest Question', Meteor.user().profile.unanswered_questions[unansweredCount-1].text
+        )
+        notification.show()
+        clearInterval(window.blinkInterval)
+        window.blinkInterval = window.setInterval(->
+          document.title = if document.title is 'PennApps'
+            "#{unansweredCount} Unanswered Question#{if unansweredCount isnt 1 then 's' else ''}"
+          else
+            'PennApps'
+        , 1500)
       )
-      notification.show()
-      clearInterval(window.blinkInterval)
-      window.blinkInterval = window.setInterval(->
-        document.title = if document.title is 'PennApps'
-          "#{{unanswered_length}} Unanswered Question#{if unanswered_length isnt 1 then 's' else ''}"
-        else
-          'PennApps'
-      , 750)
 )

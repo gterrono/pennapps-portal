@@ -20,4 +20,5 @@ if(Meteor.users.find().fetch().length is 0)
       projects: {}
       prizes: {}
       unanswered_questions: []
+      unanswered_num: 0
   )

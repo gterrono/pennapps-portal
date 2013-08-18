@@ -1,9 +1,9 @@
-Template.questionList.helpers(
-	questions: -> Questions.find({answered: undefined}).fetch()
+Template.questions.helpers(
+	questions: -> Questions.find({answered: undefined}, {sort: createdAt: 1}).fetch()
 )
 
 Template.question.helpers(
 	answered: -> @answered?
-	asker_name: -> Users.findOne(@asker)
-	isAdmin: -> Meteor.User().profile.admin
+	asker_name: -> @asker
+	isAdmin: -> Meteor.user().profile.admin
 )
