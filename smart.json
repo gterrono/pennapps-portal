@@ -1,12 +1,8 @@
 {
   "meteor": {
-    "git": "https://github.com/meteor/meteor.git",
-    "branch": "master"
+    "tag": "v0.6.5"
   },
   "packages": {
-    "foundation": {},
-    "spin": {},
-    "router": {},
-    "accounts-ui-bootstrap-dropdown": {}
+    "zurb-foundation": {}
   }
 }

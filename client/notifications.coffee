@@ -7,11 +7,14 @@ Template.notifications.helpers(
 Template.notifications.events(
   'click #notifications-button': (e) ->
     e.preventDefault()
-    ###unless window.sawNotifications
+    unless window.sawNotifications
+      e.stopPropagation()
       clearInterval(window.blinkInterval)
       document.title = 'PennApps'
       $('#notifications').addClass('dropdown-display')
-      window.sawNotifications = true###
+      window.sawNotifications = true
+
+  'click #notifications': (e) -> e.stopPropagation()
 )
 
 

@@ -1,34 +1,28 @@
 <template name="notifications">
-<div class="dropdown">
-  <ul class="nav pull-right">
-    <li>
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="notifications-button">
-      Notifications
-      {{#if notificationCount}}
+  <a href="#" class="dropdown-toggle" data-dropdown="notifications" id="notifications-button">
+    Notifications
+    {{#if notificationCount}}
       <span class="badge badge-inverse">{{notificationCount}}</span>
-      {{/if}}
-      <b class="caret"></b>
-    </a>
-    <div class="dropdown-menu">
-      <ul class="dropdown-scroll" id="notifications">
+    {{/if}}
+    <b class="caret">▾</b>
+  </a>
+  <ul class="notification f-dropdown medium" id="notifications" data-dropdown-content>
+    <div class="dropdown-scroll">
       {{#each notifications}}
-      {{> notification}}
+        {{> notification}}
       {{/each}}
-    </ul>
     </div>
-    </li>
   </ul>
-</div>
 </template>
 
 <template name="notification">
-{{#if action}}
-<a class="notification-text" href="{{action}}">
-  {{/if}}
-  <li class="notification-text {{unseenClass}}">
-  {{notificationText}} at {{notificationTime}}
-  </li>
   {{#if action}}
-</a>
-{{/if}}
+    <a class="notification-text" href="{{action}}">
+  {{/if}}
+    <li class="notification-text {{unseenClass}}">
+      {{notificationText}} at {{notificationTime}}
+    </li>
+  {{#if action}}
+    </a>
+  {{/if}}
 </template>

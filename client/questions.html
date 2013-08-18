@@ -1,0 +1,17 @@
+<template name="questionList">	
+	<h1>All Questions</h1>
+	{{#each questions }}
+		{{> question }}
+	{{/each }}
+</template>
+
+<template name="question">
+	<p>{{asker_name}}: {{question}}<p>
+	{{#if answered}}
+	<p>{{answer}}</p>
+	{{else}}
+		{{#if isAdmin}}
+		<input class='answerbox'>
+		{{/if}}
+	{{/if}}
+</template>

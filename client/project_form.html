@@ -1,42 +1,32 @@
 <template name="projectForm">
-{{#with usersProject}}
-<div id="projectModal" class="modal hide fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#215;</button>
-        <h4>{{#if edit}}Edit Your{{else}}Make a New{{/if}} Project</h4>
-      </div>
+  {{#with usersProject}}
+    <div id="projectModal" class="reveal-modal small">
+      <h2>{{#if edit}}Edit Your{{else}}Make a New{{/if}} Project</h2>
       <form id="project-form">
-        <div class="modal-body">
-          <div class="row">
-            <label>Name</label>
-            <input type="text" name="name" id="project-name" value="{{name}}" />
-          </div>
-          <div class="row">
-            <label>Description</label>
-            <textarea name="description" id="project-description">{{description}}</textarea>
-          </div>
-          <div class="row">
-            <label>Location</label>
-            <select id="project-location">
-              {{#if location}}
+        <div class="row">
+          <label>Name</label>
+          <input type="text" name="name" id="project-name" value="{{name}}" />
+        </div>
+        <div class="row">
+          <label>Description</label>
+          <textarea name="description" id="project-description">{{description}}</textarea>
+        </div>
+        <div class="row">
+          <label>Location</label>
+          <select id="project-location">
+            {{#if location}}
               <option value="{{location}}" selected="selected">{{location}}</option>
-              {{/if}}
-              {{#each seatingOptions}}
+            {{/if}}
+            {{#each seatingOptions}}
               <option value="{{this}}">{{this}}</option>
-              {{/each}}
-            </select>
-          </div>
+            {{/each}}
+          </select>
         </div>
-        <div class="modal-footer">
-          <div class="row">
-            <input type="submit" class="btn submit" id="submit-new-project" />
-          </div>
+        <div class="row">
+          <input type="submit" class="button submit" id="submit-new-project" />
         </div>
+        <a class="close-reveal-modal">&#215;</a>
       </form>
     </div>
-  </div>
-</div>
-{{/with}}
+  {{/with}}
 </template>

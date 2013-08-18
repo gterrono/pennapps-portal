@@ -2,48 +2,6 @@
   height: 45px;
 }
 
-ul {
-  list-style: none;
-}
-
-.notifications-list div:first-child {
-  border-top: 1px solid #ccc;
-}
-
-.notification {
-  border-bottom: 1px solid #ccc;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-#footer {
-  padding-top: 18px;
-  border-top: 1px solid #eee;
-  padding-left: 183px;
-}
-
-.row {
-  margin-left: 0px;
-}
-
-.navbar>.navbar-inner {
-  padding-left: 150px;
-  padding-right: 150px;
-  background-color: #45bcd2;
-  background-image: none;
-}
-
-.navbar a.brand {
-  color: #fff;
-}
-
-.navbar ul.nav>li>a {
-  color: #fff;
-  font-family: 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  font-weight: normal;
-}
-
 .container {
   margin-top: 45px;
 }
@@ -62,6 +20,19 @@ div>a#login-sign-in-link, div>a#login-name-link {
   text-decoration: none;
 }
 
+div#login-dropdown-list a.login-close-text, div#login-dropdown-list a.additional-link {
+  padding: 0 0 0 0;
+  margin-bottom: 8px;
+  height: 30px;
+  background-color: white;
+  color: black;
+}
+
+div#login-password-label-and-input {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 #footer {
   margin-top: 10px;
 }
@@ -71,24 +42,23 @@ div>a#login-sign-in-link, div>a#login-name-link {
   background: white;
 }
 
-#notifications {
+#notifications.dropdown-display {
   background: white;
+  padding: 0 0 0 0;
 }
 
 .dropdown-scroll {
   max-height: 400px;
-  margin-left: 0px;
-  padding: 0px 20px 0px 20px;
+  overflow-y: auto;
 }
 
-#notifications li.notification-text:hover {
+#notifications.dropdown-display>li:hover {
   cursor: auto;
   background: rgb(240, 240, 240);
 }
 
 li.notification-text, a.notification-text {
-  max-width: 200px;
-  padding: 10px 0px 10px 0px;
+  padding: 10px 10px 10px 10px;
   border-bottom: 1px solid #ccc;
   width: 100%;
   font-size: 0.875em;
@@ -129,8 +99,4 @@ input.submit, form div.prize.row {
 
 .row.mentor-description {
   margin-top: 10px;
-}
-
-.modal form {
-  margin-bottom: 0px;
 }

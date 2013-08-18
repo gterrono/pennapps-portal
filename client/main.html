@@ -6,22 +6,27 @@
   <meta name="viewport" content="width=device-width" />
 </head>
 <body>
-  <div class='navbar navbar-fixed-top' id='nav-container'>
-    <div class='navbar-inner'>
-      <a class="brand" href='{{homePagePath}}'>PennApps</a>
-      {{> navBarButtons}}
-    </div>
+  <div class='contain-to-grid fixed' id='nav-container'>
+    <nav class='top-bar'>
+    <ul class='title-area'>
+      <li class='name'>
+      <h1><a href='{{homePagePath}}'>PennApps</a></h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
+    {{> navBarButtons}}
+    </nav>
   </div>
   <div class="container">
     <div class='row'>
       <div class='large-12 columns'>
         {{#if ready}}
-        {{renderPage}}
-        {{> projectForm}}
-        {{> hackathonForm}}
-        {{> notificationForm}}
+          {{renderPage}}
+          {{> projectForm}}
+          {{> hackathonForm}}
+          {{> notificationForm}}
         {{else}}
-        {{> spinner}}
+          {{> spinner}}
         {{/if}}
       </div>
     </div>
